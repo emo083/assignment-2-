@@ -1,0 +1,121 @@
+/* Basic Reset & Font Import */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* You can change this to your preferred font */
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333; /* Adjust logo text color */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ff66b2; /* A pink color for hover/active, similar to your image */
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 80px 50px;
+    background-color: #f9f9f9;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero-content .highlight {
+    color: #ff66b2; /* Adjust to the orange/pink color in your image */
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Slightly rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Subtle shadow */
+}
+
+/* Our Plants Section */
+.our-plants-section {
+    text-align: center;
+    padding: 80px 50px;
+    background-color: #fff;
+}
+
+.our-plants-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff66b2; /* Matching the highlight color */
+}
+
+.our-plants-section p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* Footer (optional for now) */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}

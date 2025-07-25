@@ -53,7 +53,7 @@ nav ul li a.nav-link {
 
 nav ul li a.nav-link.active {
     color: #000; 
-    font-weight: bold; 
+    font-weight: normal; 
 }
 
 nav ul li a.nav-link.inactive {

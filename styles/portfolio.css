@@ -1,4 +1,4 @@
-/* Basic Reset & Font Import */
+/* General Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +6,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif; /* You can change this to your preferred font */
+    font-family: Arial, sans-serif; /* Default font for the body */
     line-height: 1.6;
     color: #333;
+    background-color: #f8f8f8; /* Light background for the page */
 }
 
 /* Header Styling */
@@ -18,7 +19,7 @@ header {
     align-items: center;
     padding: 20px 50px;
     background-color: #fff;
-    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for header */
 }
 
 .logo {
@@ -27,14 +28,14 @@ header {
 }
 
 .logo img {
-    height: 50px; /* Adjust logo size */
+    height: 30px; /* Adjust logo height as needed */
     margin-right: 10px;
 }
 
 .logo span {
     font-size: 1.5em;
     font-weight: bold;
-    color: #333; /* Adjust logo text color */
+    color: #333;
 }
 
 nav ul {
@@ -46,54 +47,82 @@ nav ul li {
     margin-left: 30px;
 }
 
-nav ul li a {
+/* Base style for all navigation links */
+nav ul li a.nav-link {
     text-decoration: none;
-    color: #555;
-    font-weight: bold;
+    font-weight: bold; /* All nav links are bold by default */
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    color: #ff66b2; /* A pink color for hover/active, similar to your image */
+/* Active links (Home and Cart) */
+nav ul li a.nav-link.active {
+    color: #000; /* Black color for active Home and Cart links */
 }
 
-/* Hero Section */
+/* Inactive links (Shop and About us) */
+nav ul li a.nav-link.inactive {
+    color: #999; /* Lighter grey for Shop and About us */
+}
+
+/* Hover effect for all nav links */
+nav ul li a.nav-link:hover {
+    color: #E95A08; /* Hover color for nav links */
+}
+
+
+/* Hero Section Styling */
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 80px 50px;
     background-color: #f9f9f9;
+    gap: 40px; /* Space between text and image */
 }
 
 .hero-content {
-    max-width: 50%;
+    flex: 1; /* Allows content to take available space */
+    max-width: 550px; /* Max-width for the text content */
 }
 
 .hero-content h1 {
     font-size: 3.5em;
     margin-bottom: 20px;
-    color: #333;
+    font-family: 'Noto Serif', serif; /* Noto Serif font for the main heading */
+    line-height: 1.2;
 }
 
-.hero-content .highlight {
-    color: #ff66b2; /* Adjust to the orange/pink color in your image */
+.hero-content h1 .always-text {
+    color: #333; /* Black for "ALWAYS" */
+}
+
+.hero-content h1 .fresh-flowers-text {
+    color: #E95A08; /* Color for "FRESH FLOWERS" */
 }
 
 .hero-content p {
     font-size: 1.1em;
     line-height: 1.8;
+    color: #666;
+}
+
+.hero-image {
+    flex-shrink: 0; /* Prevents image from shrinking */
+    width: 500px; /* Fixed width for the image container */
+    height: 350px; /* Fixed height for the image container */
+    overflow: hidden; /* Ensures image doesn't overflow */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* More prominent shadow */
 }
 
 .hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Optional: Slightly rounded corners for the image */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Subtle shadow */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    display: block; /* Removes extra space below image */
 }
 
-/* Our Plants Section */
+/* Our Plants Section Styling */
 .our-plants-section {
     text-align: center;
     padding: 80px 50px;
@@ -103,19 +132,241 @@ nav ul li a.active {
 .our-plants-section h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #ff66b2; /* Matching the highlight color */
+    font-family: 'Noto Serif', serif; /* Noto Serif for "Our Plants" */
 }
+
+.our-plants-section h2 .our-text-color { /* Class for "Our" text color */
+    color: #E95A08; /* Color for "Our" */
+}
+
+.our-plants-section h2 .plants-text-color { /* Class for "Plants" text color */
+    color: #000; /* Black for "Plants" */
+}
+
 
 .our-plants-section p {
     font-size: 1.1em;
     max-width: 700px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 40px auto; /* Centered paragraph */
+    color: #666;
 }
 
-/* Footer (optional for now) */
+/* Product Grid Styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between product cards */
+    max-width: 1200px; /* Max width of the grid */
+    margin: 0 auto; /* Center the grid */
+    padding: 20px 0;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 200px; /* Fixed height for product images */
+    object-fit: contain; /* Ensures image is fully visible within its box */
+    margin-bottom: 15px;
+    display: block; /* Removes extra space below image */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-card .product-name { /* Class for Lily Blossom text */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: normal; /* Lily Blossom will be normal font */
+}
+
+.product-card .product-price { /* Class for 20 USD text */
+    font-size: 1.1em;
+    font-weight: bold; /* 20 USD will be bold */
+    color: #000; /* Black for 20 USD */
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    background-color: #E95A08; /* Button background color */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #d05007; /* Darker shade on hover for the new color */
+}
+
+/* Flower Lover Section Styling */
+.flower-lover-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+    background-color: #fefefe; /* Very light background for this section */
+    gap: 80px; /* More space between image and content */
+}
+
+.flower-lover-image-container {
+    position: relative; /* For positioning the badge */
+    flex-shrink: 0;
+    width: 450px; /* Adjusted width based on image */
+    height: 450px; /* Adjusted height based on image */
+    border-radius: 8px; /* Slightly rounded corners */
+    overflow: hidden; /* Ensures the image fits within the container */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* More prominent shadow */
+}
+
+.flower-lover-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Covers the container */
+    display: block;
+}
+
+.trusted-badge {
+    position: absolute;
+    top: 15px; /* Adjust position from top */
+    right: 15px; /* Adjust position from right */
+    width: 100px; /* Size of the badge */
+    height: 100px; /* Size of the badge */
+    z-index: 10; /* Ensures badge is on top of the image */
+}
+
+.flower-lover-content {
+    max-width: 500px; /* Max width for the text content */
+}
+
+.flower-lover-heading {
+    font-family: 'Noto Serif', serif; /* Noto Serif font */
+    font-size: 3em; /* Larger font size */
+    color: #000; /* Changed to Black for "Flower & Plants Lover" */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.flower-lover-content ul {
+    list-style: disc; /* Bullet points */
+    margin-left: 25px; /* Indent bullet points */
+}
+
+.flower-lover-content ul li {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 15px; /* Space between list items */
+}
+
+/* Footer Styling (Basic) */
 footer {
     padding: 20px;
     text-align: center;
     background-color: #333;
     color: #fff;
+    font-size: 0.9em;
+    margin-top: 50px; /* Add some space above the footer */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+    .flower-lover-section {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .flower-lover-image-container {
+        width: 100%;
+        max-width: 450px; /* Limit width on smaller screens */
+        height: auto;
+    }
+
+    .flower-lover-main-img {
+        height: auto;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    header,
+    .hero-section,
+    .our-plants-section,
+    .flower-lover-section {
+        padding: 30px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .our-plants-section h2 {
+        font-size: 2em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .flower-lover-heading {
+        font-size: 2.5em;
+    }
+
+    .trusted-badge {
+        width: 80px;
+        height: 80px;
+    }
 }

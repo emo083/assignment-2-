@@ -1,4 +1,4 @@
-/* General Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +6,18 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Noto Serif', serif; 
     line-height: 1.6;
     color: #333;
     background-color: #f8f8f8;
 }
 
-/* Header Styling */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 5%; 
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
@@ -25,15 +25,15 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    gap: 10px; 
 }
 
 .logo img {
-    height: 30px;
-    margin-right: 10px;
+    height: 60px; 
 }
 
 .logo span {
-    font-size: 1.5em;
+    font-size: 2.6em; 
     font-weight: bold;
     color: #333;
 }
@@ -41,43 +41,44 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin-left: 30px;
+    gap: 30px; 
 }
 
 nav ul li a.nav-link {
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1.05em; 
     transition: color 0.3s ease;
 }
 
+
 nav ul li a.nav-link.active {
-    color: #000;
+    color: #000; 
+    font-weight: bold; 
 }
 
 nav ul li a.nav-link.inactive {
-    color: #999;
+    color: #999; 
+    font-weight: normal; 
 }
 
 nav ul li a.nav-link:hover {
-    color: #E95A08;
+    color: #E95A08; 
 }
 
 
-/* Hero Section Styling */
 .hero-section {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 80px 50px;
+    justify-content: center; 
+    padding: 80px 5%;
     background-color: #f9f9f9;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .hero-content {
     flex: 1;
+    min-width: 300px;
     max-width: 550px;
 }
 
@@ -106,6 +107,7 @@ nav ul li a.nav-link:hover {
     flex-shrink: 0;
     width: 500px;
     height: 350px;
+    max-width: 100%;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -118,10 +120,10 @@ nav ul li a.nav-link:hover {
     display: block;
 }
 
-/* Our Plants Section Styling */
+
 .our-plants-section {
     text-align: center;
-    padding: 80px 50px;
+    padding: 80px 5%;
     background-color: #fff;
 }
 
@@ -146,7 +148,7 @@ nav ul li a.nav-link:hover {
     color: #666;
 }
 
-/* Product Grid Styling */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -163,11 +165,12 @@ nav ul li a.nav-link:hover {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .product-card img {
@@ -211,14 +214,15 @@ nav ul li a.nav-link:hover {
     background-color: #d05007;
 }
 
-/* Flower Lover Section Styling */
+
 .flower-lover-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 50px;
+    padding: 80px 5%;
     background-color: #fefefe;
     gap: 80px;
+    flex-wrap: wrap;
 }
 
 .flower-lover-image-container {
@@ -226,8 +230,9 @@ nav ul li a.nav-link:hover {
     flex-shrink: 0;
     width: 450px;
     height: 450px;
+    max-width: 100%;
+    overflow: visible; 
     border-radius: 8px;
-    overflow: visible;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
@@ -243,13 +248,16 @@ nav ul li a.nav-link:hover {
     position: absolute;
     top: -50px; 
     right: -50px; 
-    width: 150px; 
+    width: 150px;
     height: auto;
     z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .flower-lover-content {
     max-width: 500px;
+    text-align: left;
 }
 
 .flower-lover-heading {
@@ -261,20 +269,32 @@ nav ul li a.nav-link:hover {
 }
 
 .flower-lover-content ul {
-    list-style: disc;
-    margin-left: 25px;
+    list-style: none;
+    padding-left: 0;
 }
 
 .flower-lover-content ul li {
     font-size: 1.1em;
     color: #666;
     margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
 }
 
-/* Latest Deals Section Styling */
+.flower-lover-content ul li::before {
+    content: '•';
+    color: #E95A08;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
 .latest-deals-section {
     text-align: center;
-    padding: 80px 50px;
+    padding: 80px 5%;
     background-color: #fefefe;
 }
 
@@ -285,11 +305,11 @@ nav ul li a.nav-link:hover {
 }
 
 .latest-deals-heading .latest-text-color {
-    color: #E95A08; 
+    color: #E95A08;
 }
 
 .latest-deals-heading .deals-text-color {
-    color: #000; 
+    color: #000;
 }
 
 .latest-deals-description {
@@ -301,11 +321,10 @@ nav ul li a.nav-link:hover {
 
 .deals-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    
     grid-template-areas:
         "small1 large large"
         "small2 large large";
@@ -316,11 +335,12 @@ nav ul li a.nav-link:hover {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .deal-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 .deal-card img {
@@ -328,6 +348,11 @@ nav ul li a.nav-link:hover {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.deal-card:hover img {
+    transform: scale(1.05);
 }
 
 .deal-overlay {
@@ -343,17 +368,19 @@ nav ul li a.nav-link:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    opacity: 1; 
+    opacity: 1;
+    padding: 20px;
 }
 
 .deal-overlay p {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 15px;
+    line-height: 1.3;
 }
 
 .shop-now-link {
-    color: #fff; 
+    color: #fff;
     text-decoration: underline;
     font-size: 0.9em;
     font-weight: bold;
@@ -362,33 +389,209 @@ nav ul li a.nav-link:hover {
 }
 
 .shop-now-link:hover {
-    color: #E95A08; 
+    color: #E95A08;
 }
 
 
-.deal-card.small-card:nth-child(1) { /* 60% Off Bloom Plant */
+.deal-card.small-card:nth-child(1) {
     grid-area: small1;
+    height: 200px;
 }
 
-.deal-card.small-card:nth-child(2) { /* 30% Off Ana Plant */
+.deal-card.small-card:nth-child(2) {
     grid-area: small2;
+    height: 200px;
 }
 
-.deal-card.large-card:nth-child(3) { /* 25% Off Zabo Plant */
+.deal-card.large-card:nth-child(3) {
     grid-area: large;
-    
     grid-row: span 2;
+    height: 420px;
 }
 
 
+.newsletter-section {
+    background-image: url('/assets/news-letter-bg.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.newsletter-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.newsletter-content h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    
+    gap: 0; 
+    flex-wrap: wrap;
+    align-items: baseline; 
+}
+
+.newsletter-form input[type="email"] {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px 0 0 5px; 
+    width: 300px;
+    max-width: 100%;
+    font-size: 1em;
+    outline: none;
+    color: #333;
+    min-width: 150px; 
+}
+
+.newsletter-form button {
+    background-color: #E95A08;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 0 5px 5px 0; 
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    min-width: 120px; 
+}
+
+.newsletter-form button:hover {
+    background-color: #d05007;
+}
 
 footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
+    background-color: #fefefe;
+    color: #333;
+    padding: 50px 5%;
     font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col.about-us {
+    min-width: 250px;
+    max-width: 350px;
+}
+
+
+.footer-col .logo {
+    margin-bottom: 20px;
+    display: block; 
+    width: fit-content; 
+}
+
+
+.footer-col p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.footer-col h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 3px;
+    background-color: #E95A08;
+    border-radius: 2px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #E95A08;
+}
+
+.social-media {
+    text-align: right;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.social-icon img {
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.social-icon img:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #eee;
     margin-top: 50px;
+    padding-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.85em;
 }
 
 
@@ -417,7 +620,7 @@ footer {
     }
 
     .deals-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         grid-template-areas:
             "small1"
             "small2"
@@ -425,11 +628,58 @@ footer {
         max-width: 450px;
     }
 
-    .deal-card.large-card {
-        height: 300px; 
+    .deal-card.small-card:nth-child(1),
+    .deal-card.small-card:nth-child(2),
+    .deal-card.large-card:nth-child(3) {
+        height: 250px;
+        grid-row: auto;
+    }
+
+    
+    .newsletter-content h2 {
+        font-size: 2.2em;
+    }
+
+    .newsletter-form {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px; 
+    }
+    
+    .newsletter-form input[type="email"] {
+        border-radius: 5px; 
+        width: 80%;
+        margin-bottom: 0; 
+    }
+
+    .newsletter-form button {
+        border-radius: 5px; 
+        width: 80%; 
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-col {
+        min-width: unset;
+        width: 100%;
+        text-align: left;
+    }
+
+    .footer-col h3::after {
+        left: 0;
+    }
+
+    .social-media {
+        text-align: left;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
     }
 }
-
 
 @media (max-width: 900px) {
     .hero-section {
@@ -505,5 +755,32 @@ footer {
 
     .shop-now-link {
         font-size: 0.8em;
+    }
+
+    
+    .newsletter-content h2 {
+        font-size: 1.8em;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .newsletter-form input[type="email"] {
+        width: 90%;
+    }
+
+    footer {
+        padding: 30px 20px;
+    }
+
+    .footer-col h3 {
+        font-size: 1.2em;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.9em;
     }
 }
